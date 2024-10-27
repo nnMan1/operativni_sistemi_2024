@@ -1,0 +1,5 @@
+echo "Pozvali ste skriptu $0"
+echo "Prvi argument je $1"
+echo "Drugi arguemnt je $2"
+echo "Ukupno ima $# argumenata"
+echo "Svi argumenti su $*"
