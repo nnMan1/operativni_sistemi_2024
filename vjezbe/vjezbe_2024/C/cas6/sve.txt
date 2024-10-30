@@ -1,0 +1,31 @@
+#Obrisati fajl koji se predaje kao argment programa.
+#Obraiti moguce izuzetke
+
+if ! [ $# -eq 1 ] # da li je $# razlicito 1
+then
+	echo "Potrebno je da predate tacno jedan argument"
+	exit 1
+fi
+
+if ! [ -f $1 ] #provjerava da li je $1 putanja do foldera
+then 
+	echo "Potrebno je predati putanju do fajla"
+	exit 1
+fi
+
+if rm $1
+then 
+	echo "Fajl $1 je uspjesno obrisan"
+else
+	echo "Fajl $1 nije uspjesno obrisan"
+fi
+if [ $1 -lt 5 ]
+then
+	echo "Predali ste broj manji od 5"
+#elif [ $1 -ge 10 -a $1 -le 20 ]
+elif [ $1 -ge 10 ] && [ $1 -le 20 ]
+then
+	echo "predali ste broj izmejdu 10 i 20"
+else 
+	echo "predati broj nije u opsegu [-inf, 5] U [10, 20]"
+fi
