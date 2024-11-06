@@ -1,3 +1,5 @@
+#primjer poziva: ./8.sh p a *.t ovaj skup fajlova ne ide pod "" !!!!!!!
+
 if [ $# -lt 3 ]
 then
 	echo "Potrebno je predati makar tri arugmenta"
