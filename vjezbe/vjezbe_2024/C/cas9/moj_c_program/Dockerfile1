@@ -1,0 +1,23 @@
+FROM ubuntu:22.04
+# pravimo sliku od ubuntu slike
+
+ENV mode="dev"
+
+RUN apt update
+#updatujemo apt repozitorijume
+RUN apt install g++ -y
+#instaliramo c++ kompajler
+
+WORKDIR /home
+#podesimo radni direktorijum da bude /home
+
+RUN mkdir src
+
+COPY . /home/src
+
+RUN g++ src/main.cpp -o main
+RUN g++ src/main_dev.cpp -o dev
+
+RUN chmod +x src/run_program.sh
+
+CMD ["/bin/sh", "-c", "./$mode"]
