@@ -1,0 +1,38 @@
+#version: '3.9'
+
+services:
+  ucitavanje-stringa:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - HOST_USER_ID=1000
+        - HOST_USER_NAME=user
+        - HOST_GROUP_ID=1000
+        - HOST_GROUP_NAME=user
+    tty: true
+    stdin_open: true
+    environment:
+      - USERNAME="Marko"
+      - ID="1000"
+    volumes:
+      - volume1:/src/podaci
+      - ./podaci2:/src/podaci2
+    image: 'moja-c-aplikacija:v1'
+
+  sabiranje-dva-broja:
+    build: 
+      context: .
+      dockerfile: sabiranje.dockerfile
+    tty: true
+    stdin_open: true
+    environment:
+      - USERNAME="Marko"
+      - ID="1000"
+    volumes:
+      - volume1:/src/podaci
+      - ./podaci2:/src/podaci2
+    image: 'sabiranje-aplikacija:v1'
+      
+volumes:
+  volume1:
