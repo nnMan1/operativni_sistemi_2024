@@ -1,0 +1,22 @@
+services:
+  moja-c-aplikacija1:
+    build:
+      context: .
+      dockerfile: Dockerfile  
+      args: 
+        - HOST_USER_ID=1000 
+        - HOST_USER_NAME=velibor
+        - HOST_GROUP_ID=1000 
+        - HOST_GROUP_NAME=velibor
+    tty: true
+    stdin_open: true
+    environment:
+      - PORUKA="Poruka iz docker compose fajla"
+      - UNAME="marko"
+    volumes:
+      - ./data/:/app/data
+      - moj-vol-1:/app/data2
+    image: "moja-c-slika"
+    
+volumes:
+  moj-vol-1:
