@@ -1,12 +1,12 @@
 Virtuelna masina sa instaliranim dockerom: [download](https://f003.backblazeb2.com/file/operativni-sistemi-vm/operativi_sistemi.zip)
 
-Drugi test će se održati u utorak 10. decembra po sljedećem rasporedu:
+Rezultati drugog testa su objavljeni na eindex platformi. Pregled radova će se obaviti u ponedeljek u 15:00 u kabinetu 137. 
 
-D smjer, studenti sa parnim brojem indeksa - 10:00 sala 227
+Drugi test za C i D smjer će se održati u utorak 17. decembra po sljedećem rasporedu:
 
-D smjer, studenti sa neparnim brojem indeska - 11:00 sala 227
+C smjer - 11:00h u sali 109
 
-B smjer, 13:00 sala 109
+D smjer - 13:00h u sali 109
 
-C smjer, 14:00 sala 109
+Predavanja će se održati od 15:15 kako je predviđeno rasporedom. 
 
