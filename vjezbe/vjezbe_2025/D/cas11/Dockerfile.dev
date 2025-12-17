@@ -1,0 +1,17 @@
+FROM ubuntu:22.04
+
+ENV APP_NAME="Program za sabiranje"
+
+RUN apt update -y
+RUN apt install g++ nano -y
+
+WORKDIR /home
+
+RUN mkdir src
+COPY main.c ./src
+
+WORKDIR src
+RUN gcc main.c -o main
+
+# CMD ["gcc", "main.c", "-o", "main"]
+# CMD ["./main"]

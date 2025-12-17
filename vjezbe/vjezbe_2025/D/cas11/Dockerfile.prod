@@ -1,0 +1,36 @@
+FROM ubuntu:22.04 AS privremena
+
+ENV APP_NAME="Program za sabiranje"
+
+RUN apt update -y
+RUN apt install g++ nano -y
+
+WORKDIR /home
+
+RUN mkdir src
+COPY . ./src
+
+WORKDIR src
+RUN gcc main.c -o main
+
+# CMD ["gcc", "main.c", "-o", "main"]
+# CMD ["./main"]
+
+FROM ubuntu:22.04
+
+COPY --from=privremena /home/src/main /home/main
+
+ARG HOST_USER_ID=1000
+ARG HOST_USER_NAME=user
+ARG HOST_GROUP_ID=1000
+ARG HOST_GROUP_NAME=user
+
+RUN groupadd -g $HOST_GROUP_ID $HOST_GROUP_NAME
+RUN useradd -g $HOST_GROUP_NAME -u $HOST_USER_ID $HOST_USER_NAME
+
+RUN chown -R $HOST_USER_NAME /home
+USER $HOST_USER_NAME
+
+WORKDIR /home
+
+CMD ["./main"]
